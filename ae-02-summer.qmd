@@ -40,6 +40,8 @@ The dataset we will visualize is called `penguins`. Let's `glimpse()` at it.
 
 https://ggplot2.tidyverse.org/reference/
 
+Don't forget about your ggplot cheetsheet as well!
+
 ## Single variable
 
 ::: callout-note
@@ -60,6 +62,11 @@ penguins |>
        ... #type geom here
 
 ```
+
+Describe the shape of this distribution below..
+
+*Add Response* 
+
 
 2.  Now, make a boxplot of `weight`s of penguins.
 
@@ -96,7 +103,17 @@ Why can / should we use themes?
 Analyzing the relationship between two variables is called **bivariate** analysis.
 :::
 
-Create visualizations of the distribution of `weight`s of penguins by `species`. Note: `aes`thetic is a visual property of one of the objects in your plot. Aesthetic options are:
+What if we want to make side by side boxplots to look at body mass across penguins? Do so below... 
+
+```{r}
+#| label: side-by-side
+
+#insert code
+
+```
+
+
+Next, create visualizations of the distribution of `weight`s of penguins by `species`. Note: `aes`thetic is a visual property of one of the objects in your plot. Aesthetic options are:
 
 -   shape
 -   color
@@ -176,7 +193,7 @@ Note: Themes are a powerful way to customize the non-data components of your plo
 
 ```
 
-## Optional
+## Optional 
 
 Make your own plot! Revist the geoms page here: https://ggplot2.tidyverse.org/reference/
 
@@ -184,3 +201,5 @@ Make your own plot! Revist the geoms page here: https://ggplot2.tidyverse.org/re
 #| label: on-your-own
 
 ```
+
+
