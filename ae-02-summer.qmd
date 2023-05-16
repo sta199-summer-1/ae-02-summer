@@ -169,15 +169,9 @@ Note: Themes are a powerful way to customize the non-data components of your plo
 
 ```{r}
 #| label: re-create
-#| eval: false
 
-penguins |>
-  ggplot(
-    aes(x = body_mass_g, y = species, color = species)) +
-    geom_boxplot() + 
-    geom_jitter() + 
-    labs(x = "Weight",
-         y = )
+
+#insert code here
 
 
 ```
