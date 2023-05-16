@@ -5,6 +5,8 @@ format: html
 
 For this ae, we'll use the **tidyverse** and **palmerpenguins** packages.
 
+These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license ("No Rights Reserved") in accordance with the Palmer Station Data Policy.
+
 ## Packages
 
 ```{r}
@@ -178,7 +180,21 @@ p + scale_colour_viridis_d()
 
 ```
 
-8.  Let's use multiple geoms on a single plot. Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses `theme_minimal` and `scale_color_viridis_d(option = "D")`.
+Change the above code to say `scale_colour_viridis_c()`. Does the code run? Why or why not? 
+
+*Add Response* 
+
+Let's get practice using `scale_colour_viridis_c()`. Below, create a scatterplot between bill_length and bill_depth. Color the dots of the scatterplot by the penguins flipper length. Use `scale_colour_viridis_c()` to create a colorblind friendly pallet. 
+
+```{r}
+
+# insert code here
+
+```
+
+
+
+8. We can use multiple geoms on a single plot! Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses `theme_minimal` and `scale_color_viridis_d(option = "D")`.
 
 Note: Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends: `theme()`.
 
@@ -193,9 +209,14 @@ Note: Themes are a powerful way to customize the non-data components of your plo
 
 ```
 
+
+Above, we made note to "be deliberate about the order of plotting." Let's show why. Switch the order of the geoms used above and re-run your code. What happened? 
+
+*Add Response* 
+
 ## Optional 
 
-Make your own plot! Revist the geoms page here: https://ggplot2.tidyverse.org/reference/
+Make your own plot! Revisit the geoms page here: https://ggplot2.tidyverse.org/reference/
 
 ```{r}
 #| label: on-your-own
