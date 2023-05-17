@@ -25,9 +25,14 @@ Which ones will we use during the semester? State and define them below.
 
 *Add response*
 
+
+Why label? Makes navigation and referencing code easier.
+
+But sometimes, they can cause issues..... render your document and read the error. Why won't the document render?  
+
 ## Data
 
-The dataset we will visualize is called `penguins`. Let's `glimpse()` at it.
+The dataset we will visualize is called `penguins`. Let's `glimpse()` at it. Also let's practice using the useful function of the day `names()` on our data set. 
 
 ```{r}
 #| label: glimpse
@@ -52,7 +57,24 @@ Analyzing the a single variable is called **univariate** analysis.
 
 Create visualizations of the distribution of `weight`s of penguins.
 
-1.  Make a histogram by filling in the `...` with the appropriate arguments. Set an appropriate binwidth.
+Before making a visualization of penguins' weight, let's brainstorm what types of would and would not be appropriate. Indicate Yes or No next to each. If no, suggest when it would be appropriate to make such a plot.
+
+- Scatterplot? 
+- Histogram?
+- Boxplot? 
+- Bar plot?
+- Segmented Bar plot?
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+# Live Coding Questions 
+
+1.  Make a histogram by filling in the `...` with the appropriate arguments. Set an appropriate binwidth. Once you have the correct code, delete `#| eval: false` or change false to true
 
 ```{r}
 #| label: histogram-weight
@@ -79,6 +101,13 @@ Describe the shape of this distribution below..
 
 ```
 
+
+What does this visualization tell you about penguins' weight?
+
+*Add Response*
+
+
+
 3.  Add a theme to your boxplot!
 
 https://ggplot2.tidyverse.org/reference/ggtheme.html
@@ -99,13 +128,15 @@ Why can / should we use themes?
 
 *Add response*
 
+Now, let's take control of our labels. Using the ggplot cheet sheet, reference the `Labels and Legends` column. Add some labels to your plot above. 
+
 ## Two variables
 
 ::: callout-note
 Analyzing the relationship between two variables is called **bivariate** analysis.
 :::
 
-What if we want to make side by side boxplots to look at body mass across penguins? Do so below... 
+What if we want to make side by side boxplots to look at body mass across species? Do so below... 
 
 ```{r}
 #| label: side-by-side
@@ -115,12 +146,14 @@ What if we want to make side by side boxplots to look at body mass across pengui
 ```
 
 
-Next, create visualizations of the distribution of `weight`s of penguins by `species`. Note: `aes`thetic is a visual property of one of the objects in your plot. Aesthetic options are:
+We can do more in the aesthetics then specify x and y variables. Note: `aes`thetic is a visual property of one of the objects in your plot. Aesthetic options are:
 
 -   shape
 -   color
 -   size
 -   fill
+
+Below, we are going to practice with each of these options.
 
 4.  Make a histogram of penguins' weight where the bars are filled in by species type. Set an appropriate binwidth and alpha value. At the same time, comment each line of code to articulate what it's doing.
 
@@ -130,12 +163,25 @@ Next, create visualizations of the distribution of `weight`s of penguins by `spe
 
 penguins |>
   ggplot( 
-       aes(x = body_mass_g, color = ... )) +
+       aes(x = body_mass_g, ... )) +
        geom_histogram(binwidth = 200, alpha = 1)
+
 
 ```
 
-5.  What if we don't want the overlap? We can use `facet_wrap` to split the histograms apart! This function takes the name of the variable you want to split by, and how many cols/rows you want your plots to show up in. Run ?facet_wrap in your console and read the first two arguements of the function.
+
+- What happens when we change fill to color? 
+
+- What happens when we change fill to shape? 
+
+- What happens when you change the binwidth? 
+
+- What happens when you change alpha? 
+
+
+
+
+5.  What if we don't want the overlap? We can use `facet_wrap` to split the histograms apart! This function takes the name of the variable you want to split by, and how many cols/rows you want your plots to show up in. Run `?facet_wrap` in your console and read the first two arguments of the function. Then, use facet_wrap to split the histograms apart!
 
 ```{r}
 #| label: facet
@@ -151,16 +197,8 @@ In 1-2 sentences, describe what you see in the plot you created.
 
 *Add Response*
 
-6.  Create side-by-side boxplots to compare body mass across species. Turn off the legend so it is not displayed.
 
-```{r}
-#| label: boxplot-weight-species
-
-# insert code here
-
-```
-
-7.  We need to think critically about color when thinking about creating visualizations for a larger audience: https://ggplot2.tidyverse.org/reference/scale_viridis.html
+6.  We need to think critically about color when thinking about creating visualizations for a larger audience: https://ggplot2.tidyverse.org/reference/scale_viridis.html
 
 We will do more with colors throughout the semester. Think about this is as our first introduction. We can create a colorblind friendly pallet using `scale_colour_viridis_d() or scale_colour_viridis_c()` depending on the type of variable we are working with. Below, comment the code below to describe what it's doing:
 
@@ -193,8 +231,12 @@ Let's get practice using `scale_colour_viridis_c()`. Below, create a scatterplot
 ```
 
 
+This is a good time to practice with `size`. Remove `scale_colour_viridis_c()` and change `color = ` to `size = `. What changed? 
 
-8. We can use multiple geoms on a single plot! Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses `theme_minimal` and `scale_color_viridis_d(option = "D")`.
+**Add Response**
+
+
+7. We can use multiple geoms on a single plot! Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses `theme_minimal` and `scale_color_viridis_d(option = "D")`.
 
 Note: Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends: `theme()`.
 
@@ -213,6 +255,27 @@ Note: Themes are a powerful way to customize the non-data components of your plo
 Above, we made note to "be deliberate about the order of plotting." Let's show why. Switch the order of the geoms used above and re-run your code. What happened? 
 
 *Add Response* 
+
+## Only if time 
+
+Let's practice using summarize! In the last class, we calculated a mean. There are other summary statistics we can calculate, such as a `median`, `sd`, or a count `n()`.  
+
+Using the penguins data set, calculate the median bill length. 
+
+```{r}
+#| label: summary-1
+
+
+```
+
+We can calculate more than one summary statistic at a time. Let's now calculate both the mean and the median in the same summarize statement.
+
+```{r}
+#| label: summary-1
+
+
+```
+
 
 ## Optional 
 

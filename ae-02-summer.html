@@ -118,6 +118,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>For this ae, we’ll use the <strong>tidyverse</strong> and <strong>palmerpenguins</strong> packages.</p>
+<p>These data were collected from 2007 - 2009 by Dr.&nbsp;Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license (“No Rights Reserved”) in accordance with the Palmer Station Data Policy.</p>
 <section id="packages" class="level2">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
@@ -128,10 +129,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Add response</em></p>
 <p>Which ones will we use during the semester? State and define them below.</p>
 <p><em>Add response</em></p>
+<p>Why label? Makes navigation and referencing code easier</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The dataset we will visualize is called <code>penguins</code>. Let’s <code>glimpse()</code> at it.</p>
+<p>The dataset we will visualize is called <code>penguins</code>. Let’s <code>glimpse()</code> at it. Also let’s practice using the useful function of the day <code>names()</code> on our data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -141,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="useful-links" class="level2">
 <h2 class="anchored" data-anchor-id="useful-links">Useful links:</h2>
 <p>https://ggplot2.tidyverse.org/reference/</p>
+<p>Don’t forget about your ggplot cheetsheet as well!</p>
 </section>
 <section id="single-variable" class="level2">
 <h2 class="anchored" data-anchor-id="single-variable">Single variable</h2>
@@ -158,8 +161,21 @@ Note
 </div>
 </div>
 <p>Create visualizations of the distribution of <code>weight</code>s of penguins.</p>
+<p>Before making a visualization of penguins’ weight, let’s brainstorm what types of would and would not be appropriate. Indicate Yes or No next to each. If no, suggest when it would be appropriate to make such a plot.</p>
+<ul>
+<li>Scatterplot?</li>
+<li>Histogram?</li>
+<li>Boxplot?</li>
+<li>Bar plot?</li>
+<li>Segmented Bar plot?</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="live-coding-questions" class="level1">
+<h1>Live Coding Questions</h1>
 <ol type="1">
-<li>Make a histogram by filling in the <code>...</code> with the appropriate arguments. Set an appropriate binwidth.</li>
+<li>Make a histogram by filling in the <code>...</code> with the appropriate arguments. Set an appropriate binwidth. Once you have the correct code, delete <code>#| eval: false</code> or change false to true</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
@@ -167,12 +183,16 @@ Note
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> ...)) <span class="sc">+</span> <span class="co">#type variable name here</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       ... <span class="co">#type geom here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Describe the shape of this distribution below..</p>
+<p><em>Add Response</em></p>
 <ol start="2" type="1">
 <li>Now, make a boxplot of <code>weight</code>s of penguins.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>What does this visualization tell you about penguins’ weight?</p>
+<p><em>Add Response</em></p>
 <ol start="3" type="1">
 <li>Add a theme to your boxplot!</li>
 </ol>
@@ -186,7 +206,6 @@ Note
 </div>
 <p>Why can / should we use themes?</p>
 <p><em>Add response</em></p>
-</section>
 <section id="two-variables" class="level2">
 <h2 class="anchored" data-anchor-id="two-variables">Two variables</h2>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -202,41 +221,46 @@ Note
 <p>Analyzing the relationship between two variables is called <strong>bivariate</strong> analysis.</p>
 </div>
 </div>
-<p>Create visualizations of the distribution of <code>weight</code>s of penguins by <code>species</code>. Note: <code>aes</code>thetic is a visual property of one of the objects in your plot. Aesthetic options are:</p>
+<p>What if we want to make side by side boxplots to look at body mass across species? Do so below…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#insert code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can do more in the aesthetics then specify x and y variables. Note: <code>aes</code>thetic is a visual property of one of the objects in your plot. Aesthetic options are:</p>
 <ul>
 <li>shape</li>
 <li>color</li>
 <li>size</li>
 <li>fill</li>
 </ul>
+<p>Below, we are going to practice with each of these options.</p>
 <ol start="4" type="1">
 <li>Make a histogram of penguins’ weight where the bars are filled in by species type. Set an appropriate binwidth and alpha value. At the same time, comment each line of code to articulate what it’s doing.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">color =</span> ... )) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">200</span>, <span class="at">alpha =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="5" type="1">
-<li>What if we don’t want the overlap? We can use <code>facet_wrap</code> to split the histograms apart! This function takes the name of the variable you want to split by, and how many cols/rows you want your plots to show up in. Run ?facet_wrap in your console and read the first two arguements of the function.</li>
-</ol>
-<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">fill =</span> species )) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">200</span>, <span class="at">alpha =</span> .<span class="dv">7</span>) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, ... )) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">200</span>, <span class="at">alpha =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>What happens when we change fill to color?</p></li>
+<li><p>What happens when we change fill to shape?</p></li>
+<li><p>What happens when you change the binwidth?</p></li>
+<li><p>What happens when you change alpha?</p></li>
+</ul>
+<ol start="5" type="1">
+<li>What if we don’t want the overlap? We can use <code>facet_wrap</code> to split the histograms apart! This function takes the name of the variable you want to split by, and how many cols/rows you want your plots to show up in. Run <code>?facet_wrap</code> in your console and read the first two arguments of the function. Then, use facet_wrap to split the histograms apart!</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">fill =</span> species )) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">200</span>, <span class="at">alpha =</span> .<span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In 1-2 sentences, describe what you see in the plot you created.</p>
 <p><em>Add Response</em></p>
 <ol start="6" type="1">
-<li>Create side-by-side boxplots to compare body mass across species. Turn off the legend so it is not displayed.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="7" type="1">
 <li>We need to think critically about color when thinking about creating visualizations for a larger audience: https://ggplot2.tidyverse.org/reference/scale_viridis.html</li>
 </ol>
 <p>We will do more with colors throughout the semester. Think about this is as our first introduction. We can create a colorblind friendly pallet using <code>scale_colour_viridis_d() or scale_colour_viridis_c()</code> depending on the type of variable we are working with. Below, comment the code below to describe what it’s doing:</p>
@@ -263,8 +287,16 @@ Note
 <p><img src="ae-02-summer_files/figure-html/color-demo-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<ol start="8" type="1">
-<li>Let’s use multiple geoms on a single plot. Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses <code>theme_minimal</code> and <code>scale_color_viridis_d(option = "D")</code>.</li>
+<p>Change the above code to say <code>scale_colour_viridis_c()</code>. Does the code run? Why or why not?</p>
+<p><em>Add Response</em></p>
+<p>Let’s get practice using <code>scale_colour_viridis_c()</code>. Below, create a scatterplot between bill_length and bill_depth. Color the dots of the scatterplot by the penguins flipper length. Use <code>scale_colour_viridis_c()</code> to create a colorblind friendly pallet.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is a good time to practice with <code>size</code>. Remove <code>scale_colour_viridis_c()</code> and change <code>color =</code> to <code>size =</code>. What changed?</p>
+<p><strong>Add Response</strong></p>
+<ol start="7" type="1">
+<li>We can use multiple geoms on a single plot! Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses <code>theme_minimal</code> and <code>scale_color_viridis_d(option = "D")</code>.</li>
 </ol>
 <p>Note: Themes are a powerful way to customize the non-data components of your plots: i.e.&nbsp;titles, labels, fonts, background, gridlines, and legends: <code>theme()</code>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -273,18 +305,25 @@ Note
 </figure>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> species, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight"</span>,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#insert code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Above, we made note to “be deliberate about the order of plotting.” Let’s show why. Switch the order of the geoms used above and re-run your code. What happened?</p>
+<p><em>Add Response</em></p>
+</section>
+<section id="only-if-time" class="level2">
+<h2 class="anchored" data-anchor-id="only-if-time">Only if time</h2>
+<p>Let’s practice using summarize! In the last class, we calculated a mean. There are other summary statistics we can calculate, such as a <code>median</code>, <code>sd</code>, or a count <code>n()</code>. Let’s do this below.</p>
+<p>Using the penguins data set, calculate the median bill length.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
 </div>
 </section>
 <section id="optional" class="level2">
 <h2 class="anchored" data-anchor-id="optional">Optional</h2>
-<p>Make your own plot! Revist the geoms page here: https://ggplot2.tidyverse.org/reference/</p>
+<p>Make your own plot! Revisit the geoms page here: https://ggplot2.tidyverse.org/reference/</p>
 <div class="cell">
 
 </div>
