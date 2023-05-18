@@ -1,6 +1,6 @@
 ---
 title: "Quarto & R Demo"
-format: html
+format: pdf
 ---
 
 For this ae, we'll use the **tidyverse** and **palmerpenguins** packages.
@@ -224,6 +224,8 @@ Change the above code to say `scale_colour_viridis_c()`. Does the code run? Why 
 
 Let's get practice using `scale_colour_viridis_c()`. Below, create a scatterplot between bill_length and bill_depth. Color the dots of the scatterplot by the penguins flipper length. Use `scale_colour_viridis_c()` to create a colorblind friendly pallet. 
 
+Hint: if you create points, give it a color, not a fill. In general fill changes the color within shapes, and color changes the outline. However, default points are not considered shapes. 
+
 ```{r}
 
 # insert code here
@@ -238,7 +240,7 @@ This is a good time to practice with `size`. Remove `scale_colour_viridis_c()` a
 
 7. We can use multiple geoms on a single plot! Be deliberate about the order of plotting. Our task is to recreate the following image below. Hint: This plot uses `theme_minimal` and `scale_color_viridis_d(option = "D")`.
 
-Note: Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends: `theme()`.
+Note: Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends: `theme()`. This is different than theme_minimal.
 
 ![](plot1.png){width="650" height="400" fig-align="center"}
 
