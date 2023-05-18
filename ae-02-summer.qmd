@@ -1,6 +1,8 @@
 ---
-title: "Quarto & R Demo"
+title: "Geom AE"
+author: "[INSERT NAME]"
 format: pdf
+editor: visual
 ---
 
 For this ae, we'll use the **tidyverse** and **palmerpenguins** packages.
